@@ -1,0 +1,35 @@
+using System;
+
+class Program
+{
+    // Hàm nhập mảng
+    static void NhapMang(int[] mang)
+    {
+        for (int i = 0; i < mang.Length; i++)
+        {
+            Console.Write($"Nhập phần tử thứ {i + 1}: ");
+            mang[i] = int.Parse(Console.ReadLine());
+        }
+    }
+
+    // Hàm xuất mảng
+    static void XuatMang(int[] mang)
+    {
+        Console.WriteLine("Các phần tử trong mảng là:");
+        foreach (int phanTu in mang)
+        {
+            Console.Write(phanTu + " ");
+        }
+        Console.WriteLine();
+    }
+
+    static void Main(string[] args)
+    {
+        Console.Write("Nhập số lượng phần tử của mảng: ");
+        int soLuong = int.Parse(Console.ReadLine());
+        int[] mang = new int[soLuong];
+
+        NhapMang(mang);
+        XuatMang(mang);
+    }
+}
