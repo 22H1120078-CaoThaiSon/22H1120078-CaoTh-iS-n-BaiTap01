@@ -1,0 +1,45 @@
+using System; 
+
+namespace GiaiPhuongTrinhBacNhat
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Khai báo hai biến a và b là hệ số của phương trình
+            double a, b;
+
+            // Yêu cầu người dùng nhập vào hai hệ số a và b
+            Console.Write("Nhập hệ số a: ");
+            a = double.Parse(Console.ReadLine());
+            Console.Write("Nhập hệ số b: ");
+            b = double.Parse(Console.ReadLine());
+
+            // Hiển thị phương trình sau khi nhập
+            Console.WriteLine($"Phương trình sau khi nhập: {a}x + {b} = 0");
+
+            // Giải phương trình
+            GiaiPhuongTrinh(a, b);
+        }
+
+        static void GiaiPhuongTrinh(double a, double b)
+        {
+            if (a == 0)
+            {
+                if (b == 0)
+                {
+                    Console.WriteLine("Phương trình có vô số nghiệm.");
+                }
+                else
+                {
+                    Console.WriteLine("Phương trình vô nghiệm.");
+                }
+            }
+            else
+            {
+                double x = -b / a;
+                Console.WriteLine($"Phương trình có nghiệm x = {Math.Round(x, 2)}");
+            }
+        }
+    }
+}
